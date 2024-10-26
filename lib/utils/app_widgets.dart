@@ -71,6 +71,24 @@ InputDecoration editTextDecoration(
   );
 }
 
+InputDecoration editTextDecorationWithoutIcon(String hint, BuildContext context,
+    {String? errorText}) {
+  final theme = Theme.of(context); // Get the current theme
+
+  return InputDecoration(
+    contentPadding: const EdgeInsets.fromLTRB(
+        AppSizes.lg, AppSizes.md, AppSizes.lg, AppSizes.md),
+    hintText: hint,
+    filled: true,
+    fillColor: theme.inputDecorationTheme.fillColor,
+    enabledBorder: theme.inputDecorationTheme.enabledBorder,
+    focusedErrorBorder: theme.inputDecorationTheme.focusedErrorBorder,
+    errorBorder: theme.inputDecorationTheme.errorBorder,
+    errorText: errorText,
+    focusedBorder: theme.inputDecorationTheme.focusedBorder,
+  );
+}
+
 // InputDecoration editTextDecoration(String hint, IconData icon,BuildContext context,
 //     {String? errorText}) {
 //       final themeNotifier = Provider.of<ThemeNotifier>(context);
@@ -164,26 +182,26 @@ Text formSubHeadingForm(var label) {
       textAlign: TextAlign.center);
 }
 
-// class CustomTheme extends StatelessWidget {
-//   final Widget? child;
+class CustomTheme extends StatelessWidget {
+  final Widget? child;
 
-//   const CustomTheme({super.key, required this.child});
+  const CustomTheme({super.key, required this.child});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final themeNotifier = Provider.of<ThemeNotifier>(context);
-//     return Theme(
-//       data: themeNotifier.isDarkMode
-//           ? ThemeData.dark().copyWith(
-//               backgroundColor: context.scaffoldBackgroundColor,
-//               colorScheme:
-//                   ColorScheme.fromSwatch().copyWith(secondary: appColorPrimary),
-//             )
-//           : ThemeData.light(),
-//       child: child!,
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    return Theme(
+      data: themeNotifier.isDarkMode
+          ? ThemeData.dark().copyWith(
+              colorScheme: ColorScheme.fromSwatch()
+                  .copyWith(secondary: AppColors.primary)
+                  .copyWith(surface: context.scaffoldBackgroundColor),
+            )
+          : ThemeData.light(),
+      child: child!,
+    );
+  }
+}
 
 Widget text(
   String? text, {
@@ -244,7 +262,8 @@ AppBar appBar(
 
   return AppBar(
     automaticallyImplyLeading: false,
-    backgroundColor: color ?? appBarTheme.backgroundColor ?? AppColors.primary,
+    backgroundColor:
+        color ?? appBarTheme.backgroundColor ?? AppColors.primaryBackground,
     leading: showBack
         ? IconButton(
             onPressed: () {
@@ -304,13 +323,14 @@ Widget appBarTitleWidget(context, String title,
   return Container(
     width: MediaQuery.of(context).size.width,
     height: AppSizes.appBarTitleWidgetHight,
-    color: color ?? AppColors.primary,
+    color: color ?? AppColors.white,
     child: Row(
       children: <Widget>[
         Text(
           title,
           style: boldTextStyle(
-              color: color ?? AppColors.textPrimary, size: AppSizes.fontSizeLg),
+              color: color ?? AppColors.textPrimary,
+              size: AppSizes.fontSizeLg.toInt()),
           maxLines: 1,
         ).expand(),
       ],
@@ -484,7 +504,8 @@ Widget verifyCompleteCard({
   required String title,
   required String iconHeading,
   required Function buttonClick,
-  required BuildContext context, // Pass the context to access the provider
+  required BuildContext context,
+  required bool isDoc, // Pass the context to access the provider
 }) {
   // Get the ThemeNotifier from the context
   final themeNotifier = Provider.of<ThemeNotifier>(context);

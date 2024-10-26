@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:orbit_teams_flutter/localization/app_localization.dart';
+import 'package:orbit_teams_flutter/screens/splash_screen.dart';
+import 'package:orbit_teams_flutter/utils/theme/theme.dart';
 import 'package:orbit_teams_flutter/utils/theme/theme_provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -20,28 +22,27 @@ class MyApp extends StatelessWidget {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
     return MaterialApp(
-        supportedLocales: const [
-          Locale('en'),
-          Locale('ar')
-        ],
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        localeResolutionCallback: (deviceLocale, supportedLocales) {
-          for (var locale in supportedLocales) {
-            if (deviceLocale != null &&
-                deviceLocale.languageCode == locale.languageCode) {
-              return deviceLocale;
-            }
+      supportedLocales: const [Locale('en'), Locale('ar')],
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      localeResolutionCallback: (deviceLocale, supportedLocales) {
+        for (var locale in supportedLocales) {
+          if (deviceLocale != null &&
+              deviceLocale.languageCode == locale.languageCode) {
+            return deviceLocale;
           }
-          return supportedLocales.first;
-        },
-        themeMode: ThemeMode.system,
-        theme: themeNotifier.currentTheme,
-        debugShowCheckedModeBanner: false,
-        );
+        }
+        return supportedLocales.first;
+      },
+      themeMode: ThemeMode.system,
+      theme: themeNotifier.currentTheme,
+      darkTheme: TAppTheme.darkTheme,
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
+    );
   }
 }
