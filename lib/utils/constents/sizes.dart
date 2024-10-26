@@ -13,12 +13,14 @@ class AppSizes {
   static const double borderRadiusLg = 12.0;
   static const double borderRadiusXlg = 16.0;
   static const double borderRadious20 = 20.0;
+  static const double borderRadious30 = 30.0;
 
   // Icon sizes
   static const double iconXs = 12.0;
   static const double iconSm = 16.0;
   static const double iconMd = 24.0;
   static const double iconLg = 32.0;
+  static const double icon20 = 32.0;
 
   // Font sizes
   static const double fontSizeSm = 14.0;

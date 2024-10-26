@@ -167,6 +167,28 @@ abstract class RegisterStoreBase with Store {
   String bankChequeFileName = '', bankChequeFilePath = '';
   String resumeFileName = '', resumeFilePath = '';
 
+  // Function to check if all required files are selected
+  bool areAllFilesSelected() {
+    return file != null &&
+        aadharFile != null &&
+        aadharBackFile != null &&
+        panFile != null &&
+        profileFile != null &&
+        bankStatementFile != null &&
+        ugCertificateFile != null &&
+        bankChequeFile != null &&
+        resumeFile != null;
+  }
+
+  //  // Function to display a toast if any file is missing
+  // void checkAndShowToast() {
+  //   if (!areAllFilesSelected()) {
+  //     toast('Please add all required files');
+  //   } else {
+  //     // Proceed with the next steps if all files are present
+  //   }
+  // }
+
   // final ImagePicker _picker = ImagePicker();
 
   final PhoneNumberError error = PhoneNumberError();

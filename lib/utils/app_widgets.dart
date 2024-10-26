@@ -50,14 +50,20 @@ RoundedRectangleBorder getCardShape({double radius = AppSizes.borderRadiusMd}) {
 }
 
 InputDecoration editTextDecoration(
-    String hint, IconData icon, BuildContext context,
-    {String? errorText}) {
+  String hint,
+  IconData icon,
+  BuildContext context, {
+  String? errorText,
+  FloatingLabelBehavior floatingLabelBehavior = FloatingLabelBehavior.auto,
+}) {
   final theme = Theme.of(context); // Get the current theme
 
   return InputDecoration(
     contentPadding: const EdgeInsets.fromLTRB(
         AppSizes.lg, AppSizes.md, AppSizes.lg, AppSizes.md),
     hintText: hint,
+    labelText: hint,
+    floatingLabelBehavior: floatingLabelBehavior,
     filled: true,
     fillColor: theme.inputDecorationTheme.fillColor,
     enabledBorder: theme.inputDecorationTheme.enabledBorder,

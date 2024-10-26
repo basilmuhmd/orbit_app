@@ -73,9 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text('Option 2'),
                       ),
                     ],
-                    onChanged: (value) {
-                      // Handle the selection here, e.g., assign to a variable or call a method
-                    },
+                    onChanged: (value) {},
                   ),
                   10.height,
 
@@ -88,6 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       // onChanged: (value) =>
                       //     _loginStore.employeeId = value,
                       decoration: editTextDecoration(
+                        floatingLabelBehavior: FloatingLabelBehavior.never,
                         "lblUserName".translate(context),
                         Icons.person_outline,
                         context,
@@ -103,7 +102,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     // onChanged: (value) => _loginStore.password = value,
                     decoration: editTextDecoration(
-                        "lblPassword".translate(context), Icons.lock, context,
+                        floatingLabelBehavior: FloatingLabelBehavior.never,
+                        "lblPassword".translate(context),
+                        Icons.lock,
+                        context,
                         errorText: ''),
                   ),
                   // ),

@@ -56,7 +56,21 @@
     "lblRelationship":"Relationship",
     "lblNoInternetMsg": "Oops No Internet",
     "lblMsg": "message",
-    "lblStatus": "status"
+    "lblStatus": "status",
+    "lblCancel":"Cancel",
+    "lblSelectFile":"Please select a file",
+    "lblPickfromFiles":"Pick from Files",
+    "lblOpenCamera":"Open Camera",
+    "lblChooseOption":"Choose an option",
+    "lblDelete":"Delete",
+    "lblTakePhoto":"Take a photo",
+    "lblUpload":"Upload",
+    "lblResume":"Resume",
+    "lblDescription":"Description",
+    "lblBankCheque":"Bank Cheque",
+    "lblPGCertificate":"PG Certificate\n(optional)",
+    "lblUGCertificate":"UG Certificate"
+
 
 
 }
