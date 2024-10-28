@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 import 'package:orbit_teams_flutter/utils/constents/sizes.dart';
 
-class TAppBarTheme {
-  TAppBarTheme._();
+class AppAppBarTheme {
+  AppAppBarTheme._();
 
   static const lightAppBarTheme = AppBarTheme(
     elevation: 0,
@@ -23,7 +24,7 @@ class TAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: AppColors.black, size: AppSizes.iconMd),
+    iconTheme: IconThemeData(color: AppColors.white, size: AppSizes.iconMd),
     actionsIconTheme:
         IconThemeData(color: AppColors.white, size: AppSizes.iconMd),
     titleTextStyle: TextStyle(

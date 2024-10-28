@@ -114,7 +114,7 @@ Future<Response> getRequstWithQuery(String endPoint, String query) async {
 }
 
 Future<bool> multipartRequest(String endPoint, String filePath) async {
- Dio dio = DioClient.getDio();
+  Dio dio = DioClient.getDio();
   try {
     if (!await isNetworkAvailable()) throw noInternetMsg;
 
@@ -176,16 +176,13 @@ Future<Response> multipartRequestWithData(
   }
 }
 
-
-
-Future<bool> multipartRequestWithMultiFile(String endPoint, List<String> filePaths, Map<String, String> data) async {
+Future<bool> multipartRequestWithMultiFile(
+    String endPoint, List<String> filePaths, Map<String, String> data) async {
   try {
     if (!await isNetworkAvailable()) throw noInternetMsg;
 
-  
     Dio dio = DioClient.getDio();
 
-    
     FormData formData = FormData();
     formData.fields.addAll(data.entries);
 
@@ -193,14 +190,14 @@ Future<bool> multipartRequestWithMultiFile(String endPoint, List<String> filePat
       formData.files.add(
         MapEntry(
           'file',
-          await MultipartFile.fromFile(filePath, filename: filePath.split('/').last),
+          await MultipartFile.fromFile(filePath,
+              filename: filePath.split('/').last),
         ),
       );
     }
 
     log("Multipart Request: $formData");
 
-    
     Response response = await dio.post(
       endPoint,
       data: formData,
@@ -221,8 +218,6 @@ Future<bool> multipartRequestWithMultiFile(String endPoint, List<String> filePat
     }
   }
 }
-
-
 
 Future<ApiResponseModel?> handleResponse(Response response) async {
   if (response.statusCode.isSuccessful()) {

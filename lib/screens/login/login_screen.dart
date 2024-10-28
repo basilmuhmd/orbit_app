@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:orbit_teams_flutter/localization/app_localization.dart';
 import 'package:orbit_teams_flutter/screens/forgot_password/forgot_password.dart';
-import 'package:orbit_teams_flutter/screens/register/register.dart';
 import 'package:orbit_teams_flutter/utils/app_images/app_images.dart';
 import 'package:orbit_teams_flutter/utils/app_widgets.dart';
 import 'package:orbit_teams_flutter/utils/constents/colors.dart';
@@ -30,38 +29,36 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.primaryBackground,
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Column(
+        resizeToAvoidBottomInset: false,
+        body: SingleChildScrollView(
+          child: Column(
             children: [
-              100.height,
-              Image.asset(appLogoBlueImg, height: 100),
-            ],
-          ),
-          Positioned(
-            bottom: MediaQuery.of(context).viewInsets.bottom,
-            left: 0,
-            right: 0,
-            child: Card(
-              color: AppColors.primary,
-              shape: buildRoundedCorner(radius: 15),
-              child: Column(
+              Column(
+                children: [
+                  100.height,
+                  Image.asset(appLogoBlueImg, height: 100),
+                ],
+              ),
+              Column(
                 children: [
                   Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'Log in',
-                      style: boldTextStyle(size: 30, color: white),
+                    alignment: Alignment.center,
+                    child: text(
+                      'Login'.translate(context),
+                      fontSize: AppSizes.fontSize30,
+
+                      // boldTextStyle(size: 30, color: AppColors.textPrimary),
                     ),
                   ),
                   30.height,
 
                   DropdownButtonFormField<String>(
-                    decoration:
-                        editTextDecorationWithoutIcon("Select Option", context),
+                    decoration: InputDecoration(
+                      label: text("Select option".translate(context)),
+                      floatingLabelBehavior: FloatingLabelBehavior.never,
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 10.0, vertical: 17),
+                    ),
                     value: 'Option 1',
                     items: const [
                       DropdownMenuItem(
@@ -85,40 +82,59 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       // onChanged: (value) =>
                       //     _loginStore.employeeId = value,
-                      decoration: editTextDecoration(
+                      decoration: InputDecoration(
+                        label:
+                            text("User Name / Phone Number".translate(context)),
                         floatingLabelBehavior: FloatingLabelBehavior.never,
-                        "lblUserName".translate(context),
-                        Icons.person_outline,
-                        context,
                       )),
                   // ),
                   10.height,
                   // Observer(
                   //   builder: (_) =>
                   TextFormField(
-                    style: const TextStyle(
-                      fontSize: AppSizes.md,
-                      // fontFamily: fontRegular
-                    ),
-                    // onChanged: (value) => _loginStore.password = value,
-                    decoration: editTextDecoration(
+                      style: const TextStyle(
+                        fontSize: AppSizes.md,
+                        // fontFamily: fontRegular
+                      ),
+                      // onChanged: (value) => _loginStore.password = value,
+                      decoration: InputDecoration(
+                        label: text(
+                          "Password".translate(context),
+                        ),
                         floatingLabelBehavior: FloatingLabelBehavior.never,
-                        "lblPassword".translate(context),
-                        Icons.lock,
-                        context,
-                        errorText: ''),
-                  ),
+                      )),
                   // ),
                   10.height,
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: text(
+                      "Forgot Password".translate(context),
+                      textColor: AppColors.textPrimary,
+                    ).onTap(() {
+                      const ForgotPassword().launch(
+                        context,
+                      );
+                    }),
+                  ),
+
+                  40.height,
+
+                  text(
+                      "By logging in you're agreed to the privacy policy"
+                          .translate(context),
+                      fontSize: AppSizes.fontSize12),
+
+                  20.height,
+
                   // Observer(
                   //     builder: (_) => _loginStore.isLoading
                   //         ? loadingWidgetMaker()
                   //         :
                   AppButton(
-                      text: 'Log in',
-                      color: Colors.white,
+                      text: 'Login'.translate(context),
+                      color: AppColors.primary,
                       elevation: 10,
-                      textColor: AppColors.primary,
+                      textColor: AppColors.textWhite,
                       shapeBorder: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
@@ -153,47 +169,34 @@ class _LoginScreenState extends State<LoginScreen> {
                       }),
                   // ),
                   20.height,
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Register as employee',
-                      style: primaryTextStyle(color: white),
-                    ).onTap(() {
-                      RegisterScreen().launch(context);
-                    }),
-                  ),
-                  15.height,
-                  text(
-                    "lblForgotPassword".translate(context),
-                    textColor: white,
-                  ).onTap(() {
-                    const ForgotPassword().launch(
-                      context,
-                    );
-                  }),
+                  // Align(
+                  //   alignment: Alignment.center,
+                  //   child: Text(
+                  //     'Register as employee',
+                  //     style: primaryTextStyle(color: white),
+                  //   ).onTap(() {
+                  //     RegisterScreen().launch(context);
+                  //   }),
+                  // ),
+                  // 15.height,
+
                   20.height,
-                  Text(
-                    'By logging in you\'re agreed to the privacy policy',
-                    style: secondaryTextStyle(color: white),
-                  ),
+
                   Padding(
                     padding: const EdgeInsets.fromLTRB(40, 16, 40, 16),
                     child: GestureDetector(
                       onTap: () {
                         // const PrivacyScreen().launch(context);
                       },
-                      child: const Text(
-                        "Click here to read privacy policy",
-                        style: TextStyle(color: white),
+                      child: text(
+                        "Click here to read privacy policy".translate(context),
                       ),
                     ),
                   ),
                 ],
               ).paddingAll(16),
-            ),
-          )
-        ],
-      ),
-    );
+            ],
+          ),
+        ));
   }
 }

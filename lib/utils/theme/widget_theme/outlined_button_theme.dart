@@ -3,8 +3,8 @@ import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 import 'package:orbit_teams_flutter/utils/constents/sizes.dart';
 
 /* -- Light & Dark Outlined Button Themes -- */
-class TOutlinedButtonTheme {
-  TOutlinedButtonTheme._(); //To avoid creating instances
+class AppOutlinedButtonTheme {
+  AppOutlinedButtonTheme._(); //To avoid creating instances
 
   /* -- Light Theme -- */
   static final lightOutlinedButtonTheme = OutlinedButtonThemeData(

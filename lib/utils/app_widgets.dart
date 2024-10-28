@@ -49,33 +49,33 @@ RoundedRectangleBorder getCardShape({double radius = AppSizes.borderRadiusMd}) {
   );
 }
 
-InputDecoration editTextDecoration(
-  String hint,
-  IconData icon,
-  BuildContext context, {
-  String? errorText,
-  FloatingLabelBehavior floatingLabelBehavior = FloatingLabelBehavior.auto,
-}) {
-  final theme = Theme.of(context); // Get the current theme
+// InputDecoration editTextDecoration(
+//   String hint,
+//   IconData icon,
+//   BuildContext context, {
+//   String? errorText,
+//   FloatingLabelBehavior floatingLabelBehavior = FloatingLabelBehavior.auto,
+// }) {
+//   final theme = Theme.of(context); // Get the current theme
 
-  return InputDecoration(
-    contentPadding: const EdgeInsets.fromLTRB(
-        AppSizes.lg, AppSizes.md, AppSizes.lg, AppSizes.md),
-    hintText: hint,
-    labelText: hint,
-    floatingLabelBehavior: floatingLabelBehavior,
-    filled: true,
-    fillColor: theme.inputDecorationTheme.fillColor,
-    enabledBorder: theme.inputDecorationTheme.enabledBorder,
-    focusedErrorBorder: theme.inputDecorationTheme.focusedErrorBorder,
-    errorBorder: theme.inputDecorationTheme.errorBorder,
-    errorText: errorText,
-    focusedBorder: theme.inputDecorationTheme.focusedBorder,
-    prefixIcon: Icon(icon,
-        color: theme.inputDecorationTheme.prefixIconColor,
-        size: 24), // Use the themed icon color
-  );
-}
+//   return InputDecoration(
+//     contentPadding: const EdgeInsets.fromLTRB(
+//         AppSizes.lg, AppSizes.md, AppSizes.lg, AppSizes.md),
+//     hintText: hint,
+//     labelText: hint,
+//     floatingLabelBehavior: floatingLabelBehavior,
+//     filled: true,
+//     fillColor: theme.inputDecorationTheme.fillColor,
+//     enabledBorder: theme.inputDecorationTheme.enabledBorder,
+//     focusedErrorBorder: theme.inputDecorationTheme.focusedErrorBorder,
+//     errorBorder: theme.inputDecorationTheme.errorBorder,
+//     errorText: errorText,
+//     focusedBorder: theme.inputDecorationTheme.focusedBorder,
+//     prefixIcon: Icon(icon,
+//         color: theme.inputDecorationTheme.prefixIconColor,
+//         size: 24), // Use the themed icon color
+//   );
+// }
 
 InputDecoration editTextDecorationWithoutIcon(String hint, BuildContext context,
     {String? errorText}) {
@@ -133,8 +133,8 @@ Padding editTextStyle(
 }) {
   final themeNotifier = Provider.of<ThemeNotifier>(context);
   final inputDecorationTheme = themeNotifier.isDarkMode
-      ? TTextFormFieldTheme.darkInputDecorationTheme
-      : TTextFormFieldTheme.lightInputDecorationTheme;
+      ? AppTextFormFieldTheme.darkInputDecorationTheme
+      : AppTextFormFieldTheme.lightInputDecorationTheme;
 
   return Padding(
     padding: const EdgeInsets.fromLTRB(AppSizes.xxl, 0, AppSizes.xxl, 0),
@@ -229,7 +229,6 @@ Widget text(
     style: TextStyle(
       fontFamily: fontFamily,
       fontSize: fontSize,
-      color: textColor ?? AppColors.textPrimary,
       height: 1.5,
       letterSpacing: latterSpacing,
       decoration:
@@ -268,8 +267,7 @@ AppBar appBar(
 
   return AppBar(
     automaticallyImplyLeading: false,
-    backgroundColor:
-        color ?? appBarTheme.backgroundColor ?? AppColors.primaryBackground,
+    backgroundColor: appBarTheme.backgroundColor,
     leading: showBack
         ? IconButton(
             onPressed: () {
@@ -277,18 +275,14 @@ AppBar appBar(
             },
             icon: Icon(
               Icons.arrow_back,
-              color:
-                  iconColor ?? appBarTheme.iconTheme?.color ?? AppColors.black,
+              color: appBarTheme.iconTheme?.color,
               size: appBarTheme.iconTheme?.size ?? AppSizes.iconMd,
             ),
           )
         : null,
-    title: appBarTitleWidget(
-      context,
-      title,
-      textColor: textColor ?? appBarTheme.titleTextStyle?.color,
-      color: color,
-    ),
+    title: appBarTitleWidget(context, title,
+        textColor: appBarTheme.titleTextStyle?.color,
+        color: appBarTheme.backgroundColor),
     actions: actions,
     elevation: appBarTheme.elevation ?? 0.5,
     centerTitle: appBarTheme.centerTitle ?? false,
@@ -326,17 +320,13 @@ AppBar appBar(
 
 Widget appBarTitleWidget(context, String title,
     {Color? color, Color? textColor}) {
-  return Container(
+  return SizedBox(
     width: MediaQuery.of(context).size.width,
     height: AppSizes.appBarTitleWidgetHight,
-    color: color ?? AppColors.white,
     child: Row(
       children: <Widget>[
         Text(
           title,
-          style: boldTextStyle(
-              color: color ?? AppColors.textPrimary,
-              size: AppSizes.fontSizeLg.toInt()),
           maxLines: 1,
         ).expand(),
       ],

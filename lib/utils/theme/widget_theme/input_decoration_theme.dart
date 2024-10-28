@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 
-class TInputFieldTheme {
-  TInputFieldTheme._();
+class AppInputFieldTheme {
+  AppInputFieldTheme._();
 
   static const lightInputDecorationTheme = InputDecorationTheme(
     filled: true,

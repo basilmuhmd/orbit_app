@@ -19,17 +19,17 @@ class TAppTheme {
       disabledColor: AppColors.grey,
       brightness: Brightness.light,
       primaryColor: AppColors.primary,
-      textTheme: TTextTheme.lightTextTheme,
-      chipTheme: TChipTheme.lightChipTheme,
+      textTheme: AppTextTheme.lighAppTextTheme,
+      chipTheme: AppChipTheme.lightChipTheme,
       scaffoldBackgroundColor: AppColors.white,
-      appBarTheme: TAppBarTheme.lightAppBarTheme,
-      checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
-      bottomSheetTheme: TBottomSheetTheme.lightBottomSheetTheme,
-      elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
-      outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
-      inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
+      appBarTheme: AppAppBarTheme.lightAppBarTheme,
+      checkboxTheme: AppCheckboxTheme.lightCheckboxTheme,
+      bottomSheetTheme: AppBottomSheetTheme.lightBottomSheetTheme,
+      elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
+      outlinedButtonTheme: AppOutlinedButtonTheme.lightOutlinedButtonTheme,
+      inputDecorationTheme: AppTextFormFieldTheme.lightInputDecorationTheme,
       bottomNavigationBarTheme:
-          TBottomNavigationBarTheme.lightBottomNavigationBarTheme);
+          AppBottomNavigationBarTheme.lightBottomNavigationBarTheme);
 
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
@@ -37,15 +37,15 @@ class TAppTheme {
       disabledColor: AppColors.grey,
       brightness: Brightness.dark,
       primaryColor: AppColors.primary,
-      textTheme: TTextTheme.darkTextTheme,
-      chipTheme: TChipTheme.darkChipTheme,
+      textTheme: AppTextTheme.darkTextTheme,
+      chipTheme: AppChipTheme.darkChipTheme,
       scaffoldBackgroundColor: AppColors.black,
-      appBarTheme: TAppBarTheme.darkAppBarTheme,
-      checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
-      bottomSheetTheme: TBottomSheetTheme.darkBottomSheetTheme,
-      elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
-      outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
-      inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
+      appBarTheme: AppAppBarTheme.darkAppBarTheme,
+      checkboxTheme: AppCheckboxTheme.darkCheckboxTheme,
+      bottomSheetTheme: AppBottomSheetTheme.darkBottomSheetTheme,
+      elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
+      outlinedButtonTheme: AppOutlinedButtonTheme.darkOutlinedButtonTheme,
+      inputDecorationTheme: AppTextFormFieldTheme.darkInputDecorationTheme,
       bottomNavigationBarTheme:
-          TBottomNavigationBarTheme.darkBottomNavigationBarTheme);
+          AppBottomNavigationBarTheme.darkBottomNavigationBarTheme);
 }

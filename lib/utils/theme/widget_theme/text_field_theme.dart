@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 import 'package:orbit_teams_flutter/utils/constents/sizes.dart';
 
-class TTextFormFieldTheme {
-  TTextFormFieldTheme._();
+class AppTextFormFieldTheme {
+  AppTextFormFieldTheme._();
 
   static InputDecorationTheme lightInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 3,

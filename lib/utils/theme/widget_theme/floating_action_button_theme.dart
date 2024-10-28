@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 import 'package:orbit_teams_flutter/utils/constents/sizes.dart';
 
-class TFloatingActionButtonTheme {
-  TFloatingActionButtonTheme._();
+class AppFloatingActionButtonTheme {
+  AppFloatingActionButtonTheme._();
 
   static final lightFloatingActionButtonTheme = FloatingActionButtonThemeData(
     backgroundColor: AppColors.primary,

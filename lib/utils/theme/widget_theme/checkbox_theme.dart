@@ -3,8 +3,8 @@ import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 import 'package:orbit_teams_flutter/utils/constents/sizes.dart';
 
 /// Custom Class for Light & Dark Text Themes
-class TCheckboxTheme {
-  TCheckboxTheme._(); // To avoid creating instances
+class AppCheckboxTheme {
+  AppCheckboxTheme._(); // To avoid creating instances
 
   /// Customizable Light Text Theme
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(

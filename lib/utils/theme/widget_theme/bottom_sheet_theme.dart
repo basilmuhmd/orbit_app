@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 
-class TBottomSheetTheme {
-  TBottomSheetTheme._();
+class AppBottomSheetTheme {
+  AppBottomSheetTheme._();
 
   static BottomSheetThemeData lightBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,

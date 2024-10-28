@@ -92,10 +92,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                         style: const TextStyle(
                           fontSize: AppSizes.fontSizeLg,
                         ),
-                        decoration: editTextDecoration(
-                            "lblFullName".translate(context),
-                            Icons.person,
-                            context),
+                        decoration: InputDecoration(
+                          label: text("FullName".translate(context)),
+                          icon: const Icon(Icons.person),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Full Name is required';
@@ -121,10 +121,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                             },
                             borderRadius: BorderRadius.circular(20.0),
                             value: _store.selectedGender,
-                            decoration: editTextDecoration(
-                                'lblGender'.translate(context),
-                                Icons.person,
-                                context),
+                            decoration: InputDecoration(
+                              label: text(
+                                'Gender'.translate(context),
+                              ),
+                              icon: Icon(Icons.person),
+                            ),
                             validator: (s) {
                               if (s.isEmptyOrNull) {
                                 return 'Gender is required';
@@ -142,10 +144,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'lblAddress'.translate(context),
-                            Icons.house,
-                            context),
+                        decoration: InputDecoration(
+                          label: text(
+                            'Address'.translate(context),
+                          ),
+                          icon: Icon(Icons.house),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Address is required';
@@ -162,10 +166,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            "lblMobileNumber".translate(context),
-                            Icons.phone,
-                            context),
+                        decoration: InputDecoration(
+                          label: text(
+                            "MobileNumber".translate(context),
+                          ),
+                          icon: Icon(Icons.phone),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Mobile number is required';
@@ -182,10 +188,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'lblEmail'.translate(context),
-                            Icons.email,
-                            context),
+                        decoration: InputDecoration(
+                          label: text(
+                            'Email'.translate(context),
+                          ),
+                          icon: Icon(Icons.email),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Email is required';
@@ -205,8 +213,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'Date of birth', Icons.date_range, context),
+                        decoration: InputDecoration(
+                          label: text('Date of birth'),
+                          icon: const Icon(Icons.date_range),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Date of birth is required';
@@ -235,10 +245,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                             borderRadius:
                                 BorderRadius.circular(AppSizes.borderRadious20),
                             value: _store.selectedMaritalStatus,
-                            decoration: editTextDecoration(
-                                'lblMaritalStatus'.translate(context),
-                                Icons.person,
-                                context),
+                            decoration: InputDecoration(
+                              label: text(
+                                'MaritalStatus'.translate(context),
+                              ),
+                              icon: Icon(Icons.person),
+                            ),
                             validator: (s) {
                               if (s.isEmptyOrNull) {
                                 return 'Marital status is required';
@@ -268,10 +280,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                             },
                             borderRadius: BorderRadius.circular(20.0),
                             value: _store.selectedBloodGroup,
-                            decoration: editTextDecoration(
-                                'lblBloodGroup'.translate(context),
-                                Icons.bloodtype,
-                                context),
+                            decoration: InputDecoration(
+                              label: text(
+                                'BloodGroup'.translate(context),
+                              ),
+                              icon: Icon(Icons.bloodtype),
+                            ),
                             validator: (s) {
                               if (s.isEmptyOrNull) {
                                 return 'Blood group is required';
@@ -289,10 +303,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'lblGuardianName'.translate(context),
-                            Icons.people,
-                            context),
+                        decoration: InputDecoration(
+                          label: text(
+                            'GuardianName'.translate(context),
+                          ),
+                          icon: Icon(Icons.people),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Father’s/Husband’s/Spouse’s name is required';
@@ -317,10 +333,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'lblDesignation'.translate(context),
-                            Icons.account_box_sharp,
-                            context),
+                        decoration: InputDecoration(
+                          label: text('Designation'.translate(context)),
+                          icon: Icon(Icons.account_box_sharp),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Designation is required';
@@ -336,10 +352,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'lblWorkLocation'.translate(context),
-                            Icons.location_on,
-                            context),
+                        decoration: InputDecoration(
+                          label: text('WorkLocation'.translate(context)),
+                          icon: Icon(Icons.location_on),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Work location is required';
@@ -355,10 +371,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'lblWorkEmailId'.translate(context),
-                            Icons.email,
-                            context),
+                        decoration: InputDecoration(
+                          label: text('WorkEmailId'.translate(context)),
+                          icon: Icon(Icons.email),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Work email is required';
@@ -375,10 +391,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                           // fontFamily: fontRegular
                         ),
                         keyboardType: TextInputType.number,
-                        decoration: editTextDecoration(
-                            'lblWorkMobileNo'.translate(context),
-                            Icons.phone,
-                            context),
+                        decoration: InputDecoration(
+                          label: text('WorkMobileNo'.translate(context)),
+                          icon: Icon(Icons.phone),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Work phone number is required';
@@ -398,10 +414,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                           hideKeyboard(context);
                           _selectJoiningDate(context);
                         },
-                        decoration: editTextDecoration(
-                            'lblJoiningDate'.translate(context),
-                            Icons.calendar_month,
-                            context),
+                        decoration: InputDecoration(
+                          label: text('JoiningDate'.translate(context)),
+                          icon: Icon(Icons.calendar_month),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Joining date is required';
@@ -418,10 +434,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'lblSalary'.translate(context),
-                            Icons.money,
-                            context),
+                        decoration: InputDecoration(
+                          label: text('Salary'.translate(context)),
+                          icon: Icon(Icons.money),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'Salary is required';
@@ -437,10 +453,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                           fontSize: AppSizes.fontSizeLg,
                           // fontFamily: fontRegular
                         ),
-                        decoration: editTextDecoration(
-                            'lblUanNo'.translate(context),
-                            Icons.perm_identity,
-                            context),
+                        decoration: InputDecoration(
+                          label: text('UanNo'.translate(context)),
+                          icon: Icon(Icons.perm_identity),
+                        ),
                         validator: (s) {
                           if (s.isEmptyOrNull) {
                             return 'UAN (PF) number is required';
@@ -465,10 +481,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                             fontSize: AppSizes.fontSizeLg,
                             // fontFamily: fontRegular
                           ),
-                          decoration: editTextDecoration(
-                              'lblBankName'.translate(context),
-                              Icons.account_balance,
-                              context),
+                          decoration: InputDecoration(
+                            label: text('BankName'.translate(context)),
+                            icon: Icon(Icons.account_balance),
+                          ),
                           validator: (s) {
                             if (s.isEmptyOrNull) {
                               return 'Bank Name is required';
@@ -484,10 +500,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                             fontSize: AppSizes.fontSizeLg,
                             // fontFamily: fontRegular
                           ),
-                          decoration: editTextDecoration(
-                              'lblAccountNumber'.translate(context),
-                              Icons.account_balance_wallet,
-                              context),
+                          decoration: InputDecoration(
+                            label: text('AccountNumber'.translate(context)),
+                            icon: Icon(Icons.account_balance_wallet),
+                          ),
                           keyboardType: TextInputType.number,
                           validator: (s) {
                             if (s.isEmptyOrNull) {
@@ -504,10 +520,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                             fontSize: AppSizes.fontSizeLg,
                             // fontFamily: fontRegular
                           ),
-                          decoration: editTextDecoration(
-                              'lblBranchName'.translate(context),
-                              Icons.account_balance_wallet,
-                              context),
+                          decoration: InputDecoration(
+                            label: text(
+                              'BranchName'.translate(context),
+                            ),
+                            icon: Icon(Icons.account_balance_wallet),
+                          ),
                           validator: (s) {
                             if (s.isEmptyOrNull) {
                               return 'Branch is required';
@@ -523,10 +541,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                             fontSize: AppSizes.fontSizeLg,
                             // fontFamily: fontRegular
                           ),
-                          decoration: editTextDecoration(
-                              'lblIFSCCode'.translate(context),
-                              Icons.account_balance_wallet,
-                              context),
+                          decoration: InputDecoration(
+                            label: text('IFSCCode'.translate(context)),
+                            icon: Icon(Icons.account_balance_wallet),
+                          ),
                           validator: (s) {
                             if (s.isEmptyOrNull) {
                               return 'IFSC code is required';
@@ -543,10 +561,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                             // fontFamily: fontRegular
                           ),
                           keyboardType: TextInputType.number,
-                          decoration: editTextDecoration(
-                              'lblMobileNumber'.translate(context),
-                              Icons.phone,
-                              context),
+                          decoration: InputDecoration(
+                            label: text('MobileNumber'.translate(context)),
+                            icon: Icon(Icons.phone),
+                          ),
                           validator: (s) {
                             if (s.isEmptyOrNull) {
                               return 'Phone number is required';
@@ -563,7 +581,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                                 color: AppColors.primary,
                                 child: Center(
                                     child: Text(
-                                  'lblEmergencyContactInfo'.translate(context),
+                                  'EmergencyContactInfo'.translate(context),
                                   style: primaryTextStyle(color: Colors.white),
                                 )),
                               ),
@@ -577,10 +595,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                           style: const TextStyle(
                             fontSize: AppSizes.fontSizeLg,
                           ),
-                          decoration: editTextDecoration(
-                              'lblGuardianName'.translate(context),
-                              Icons.people,
-                              context),
+                          decoration: InputDecoration(
+                            label: text(
+                              'GuardianName'.translate(context),
+                            ),
+                            icon: Icon(Icons.people),
+                          ),
                           validator: (s) {
                             if (s.isEmptyOrNull) {
                               return 'Emergency contact is required';
@@ -600,10 +620,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                             fontSize: AppSizes.fontSizeLg,
                             // fontFamily: fontRegular
                           ),
-                          decoration: editTextDecoration(
-                              'lblAddress'.translate(context),
-                              Icons.location_on,
-                              context),
+                          decoration: InputDecoration(
+                            label: text('Address'.translate(context)),
+                            icon: Icon(Icons.location_on),
+                          ),
                           validator: (s) {
                             if (s.isEmptyOrNull) {
                               return 'Address is required';
@@ -620,10 +640,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                             fontSize: AppSizes.fontSizeLg,
                             // fontFamily: fontRegular
                           ),
-                          decoration: editTextDecoration(
-                              'lblMobileNumber'.translate(context),
-                              Icons.phone,
-                              context),
+                          decoration: InputDecoration(
+                            label: text('MobileNumber'.translate(context)),
+                            icon: Icon(Icons.phone),
+                          ),
                           keyboardType: TextInputType.number,
                           validator: (s) {
                             if (s.isEmptyOrNull) {
@@ -644,10 +664,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                             fontSize: AppSizes.fontSizeLg,
                             // fontFamily: fontRegular
                           ),
-                          decoration: editTextDecoration(
-                              'lblRelationship'.translate(context),
-                              Icons.people,
-                              context),
+                          decoration: InputDecoration(
+                            label: text('Relationship'.translate(context)),
+                            icon: Icon(Icons.people),
+                          ),
                           validator: (s) {
                             if (s.isEmptyOrNull) {
                               return 'Relation is required';
@@ -815,11 +835,11 @@ class _RegisterScreenState extends State<RegisterScreen>
                                           image: 'images/BankStmt.png',
                                           title:
                                               " 3Months\n Bank Statements\n or Pay slip",
-                                          description: 'lblDescription'
-                                              .translate(context),
+                                          description:
+                                              'Description'.translate(context),
                                           iconHeading: 'images/fa_camera.png',
                                           iconHeadingText:
-                                              "lblTakePhoto".translate(context),
+                                              "TakePhoto".translate(context),
                                           buttonClick: () async {
                                             showFilePickerDialog(
                                               context,
@@ -841,7 +861,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                                   : _store.isUgCertificateDone
                                       ? verifyCompleteCard(
                                           image: _store.ugCertificateFile!,
-                                          title: "lblUGCertificate"
+                                          title: "UGCertificate"
                                               .translate(context),
                                           iconHeading: 'images/fa_user.png',
                                           buttonClick: () =>
@@ -850,13 +870,13 @@ class _RegisterScreenState extends State<RegisterScreen>
                                           context: context)
                                       : verifyCard(
                                           image: 'images/cert.png',
-                                          title: "lblUGCertificate"
+                                          title: "UGCertificate"
                                               .translate(context),
-                                          description: 'lblDescription'
-                                              .translate(context),
+                                          description:
+                                              'Description'.translate(context),
                                           iconHeading: 'images/fa_camera.png',
                                           iconHeadingText:
-                                              "lblTakePhoto".translate(context),
+                                              "TakePhoto".translate(context),
                                           buttonClick: () async {
                                             showFilePickerDialog(
                                               context,
@@ -878,7 +898,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                                   : _store.isPgCertificateDone
                                       ? verifyCompleteCard(
                                           image: _store.pgCertificateFile!,
-                                          title: "lblPGCertificate"
+                                          title: "PGCertificate"
                                               .translate(context),
                                           iconHeading: 'images/fa_user.png',
                                           buttonClick: () =>
@@ -887,13 +907,13 @@ class _RegisterScreenState extends State<RegisterScreen>
                                           context: context)
                                       : verifyCard(
                                           image: 'images/cert.png',
-                                          title: "lblPGCertificate"
+                                          title: "PGCertificate"
                                               .translate(context),
-                                          description: 'lblDescription'
-                                              .translate(context),
+                                          description:
+                                              'Description'.translate(context),
                                           iconHeading: 'images/fa_camera.png',
                                           iconHeadingText:
-                                              "lblTakePhoto".translate(context),
+                                              "TakePhoto".translate(context),
                                           buttonClick: () async {
                                             showFilePickerDialog(context,
                                                 (File selectedFile) {
@@ -912,8 +932,8 @@ class _RegisterScreenState extends State<RegisterScreen>
                                   : _store.isBankChequeDone
                                       ? verifyCompleteCard(
                                           image: _store.bankChequeFile!,
-                                          title: "lblBankCheque"
-                                              .translate(context),
+                                          title:
+                                              "BankCheque".translate(context),
                                           iconHeading: 'images/fa_user.png',
                                           buttonClick: () =>
                                               _store.removePhoto(),
@@ -921,13 +941,13 @@ class _RegisterScreenState extends State<RegisterScreen>
                                           context: context)
                                       : verifyCard(
                                           image: 'images/check.png',
-                                          title: "lblBankCheque"
-                                              .translate(context),
-                                          description: 'lblDescription'
-                                              .translate(context),
+                                          title:
+                                              "BankCheque".translate(context),
+                                          description:
+                                              'Description'.translate(context),
                                           iconHeading: 'images/fa_camera.png',
                                           iconHeadingText:
-                                              "lblTakePhoto".translate(context),
+                                              "TakePhoto".translate(context),
                                           buttonClick: () async {
                                             showFilePickerDialog(
                                               context,
@@ -973,7 +993,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                                   : _store.isResumeDone
                                       ? verifyCompleteCard(
                                           image: _store.resumeFile!,
-                                          title: "lblResume".translate(context),
+                                          title: "Resume".translate(context),
                                           iconHeading: 'images/fa_user.png',
                                           buttonClick: () =>
                                               _store.removePhoto(),
@@ -981,11 +1001,11 @@ class _RegisterScreenState extends State<RegisterScreen>
                                           context: context)
                                       : verifyCard(
                                           image: 'images/resume.png',
-                                          title: "lblResume".translate(context),
+                                          title: "Resume".translate(context),
                                           description: 'Description',
                                           iconHeading: 'images/fa_camera.png',
                                           iconHeadingText:
-                                              "lblTakePhoto".translate(context),
+                                              "TakePhoto".translate(context),
                                           buttonClick: () async {
                                             showFilePickerDialog(
                                               context,
@@ -1008,13 +1028,13 @@ class _RegisterScreenState extends State<RegisterScreen>
           ),
           floatingActionButton: Observer(
               builder: (_) => FloatingActionButton.extended(
-                    backgroundColor: TFloatingActionButtonTheme
+                    backgroundColor: AppFloatingActionButtonTheme
                         .lightFloatingActionButtonTheme.backgroundColor,
-                    foregroundColor: TFloatingActionButtonTheme
+                    foregroundColor: AppFloatingActionButtonTheme
                         .lightFloatingActionButtonTheme.foregroundColor,
-                    elevation: TFloatingActionButtonTheme
+                    elevation: AppFloatingActionButtonTheme
                         .lightFloatingActionButtonTheme.elevation,
-                    shape: TFloatingActionButtonTheme
+                    shape: AppFloatingActionButtonTheme
                         .lightFloatingActionButtonTheme.shape,
                     onPressed: () async {
                       if (_currentIndex == 0 &&
@@ -1220,7 +1240,7 @@ Widget verifyCard({
                             ),
                             3.width,
                             Text(
-                              "lblUpload".translate(context),
+                              "Upload".translate(context),
                               style: primaryTextStyle(color: white),
                             )
                           ],
@@ -1234,7 +1254,7 @@ Widget verifyCard({
                                 fit: BoxFit.fill),
                             3.width,
                             Text(
-                              "lblTakePhoto".translate(context),
+                              "TakePhoto".translate(context),
                               style: primaryTextStyle(color: white),
                             )
                           ],
@@ -1300,7 +1320,7 @@ Widget verifyCompleteCard({
                       ),
                       3.width,
                       Text(
-                        "lblDelete".translate(context),
+                        "Delete".translate(context),
                         style: primaryTextStyle(color: white),
                       )
                     ],
@@ -1329,7 +1349,7 @@ Future<void> showFilePickerDialog(
           borderRadius: BorderRadius.circular(20),
         ),
         title: Text(
-          'lblChooseOption'.translate(context),
+          'ChooseOption'.translate(context),
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -1345,7 +1365,7 @@ Future<void> showFilePickerDialog(
               _optionCard(
                 context,
                 icon: Icons.camera_alt,
-                label: 'lblOpenCamera'.translate(context),
+                label: 'OpenCamera'.translate(context),
                 onTap: () async {
                   Navigator.pop(context); // Close dialog
                   try {
@@ -1367,7 +1387,7 @@ Future<void> showFilePickerDialog(
               _optionCard(
                 context,
                 icon: Icons.folder,
-                label: 'lblPickfromFiles'.translate(context),
+                label: 'PickfromFiles'.translate(context),
                 onTap: () async {
                   var status = await Permission.storage.request();
                   if (status.isGranted) {
@@ -1399,7 +1419,7 @@ Future<void> showFilePickerDialog(
               Navigator.pop(context);
             },
             child: Text(
-              "lblCancel".translate(context),
+              "Cancel".translate(context),
               style: const TextStyle(
                 color: AppColors.primary,
                 fontWeight: FontWeight.bold,

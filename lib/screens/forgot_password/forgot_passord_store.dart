@@ -6,7 +6,7 @@ class ForgotPasswordStore = ForgotPasswordStoreBase with _$ForgotPasswordStore;
 
 abstract class ForgotPasswordStoreBase with Store {
   @observable
-  Status status = Status.start;
+  Status status = Status.verified;
 
   @observable
   bool isLoading = false;

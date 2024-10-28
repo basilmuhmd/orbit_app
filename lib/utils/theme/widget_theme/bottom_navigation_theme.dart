@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 import 'package:orbit_teams_flutter/utils/constents/sizes.dart';
 
-class TBottomNavigationBarTheme {
-  TBottomNavigationBarTheme._();
+class AppBottomNavigationBarTheme {
+  AppBottomNavigationBarTheme._();
 
   static const lightBottomNavigationBarTheme = BottomNavigationBarThemeData(
     backgroundColor: Colors.transparent,

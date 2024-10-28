@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:orbit_teams_flutter/utils/constents/colors.dart';
 
 /// Custom Class for Light & Dark Text Themes
-class TTextTheme {
-  TTextTheme._(); // To avoid creating instances
+class AppTextTheme {
+  AppTextTheme._(); // To avoid creating instances
 
   /// Customizable Light Text Theme
-  static TextTheme lightTextTheme = TextTheme(
+  static TextTheme lighAppTextTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(
         fontSize: 32.0, fontWeight: FontWeight.bold, color: AppColors.dark),
     headlineMedium: const TextStyle().copyWith(
