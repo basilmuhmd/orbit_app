@@ -1020,7 +1020,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                       if (_currentIndex == 0 &&
                           _formKey1.currentState!.validate()) {
                         // _store.validatePhoneNumber(_store.phoneNumberCont.text);
-                        _currentIndex += 3;
+                        _currentIndex += 1;
                         _tabController.animateTo(_currentIndex);
                       } else if (_currentIndex == 1 &&
                           _formKey2.currentState!.validate()) {
